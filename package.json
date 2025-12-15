@@ -1,7 +1,7 @@
 {
     "name": "n8n-nodes-queue",
     "version": "0.1.0",
-    "description": "",
+    "description": "This node temporarily holds incoming items and releases them one at a time only after a corresponding signal is received. It is designed for workflows where multiple triggers may fire in quick succession but only one execution should proceed at any given time. the key value is what's stored in the queue and expected as signal as well. *ps this is patched with ai becouse i don't know enough js frameworks to put things were it should be.",
     "license": "MIT",
     "homepage": "",
     "keywords": [

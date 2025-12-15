@@ -125,7 +125,7 @@ export class Queue implements INodeType {
       if (!staticData.locked && staticData.queue!.length > 0) {
         staticData.locked = true;
         const front = staticData.queue![0];
-        output.push({ json: front.data.json });
+        output.push({ ...front.data });
       }
     }
 
@@ -134,7 +134,7 @@ export class Queue implements INodeType {
         const state = staticData.queues![key];
         if (!state.locked && state.queue.length > 0) {
           state.locked = true;
-          output.push({ json: state.queue[0].data.json });
+          output.push({ ...state.queue[0].data });
         }
       }
     }
@@ -158,7 +158,7 @@ export class Queue implements INodeType {
 
           if (q.length > 0) {
             staticData.locked = true;
-            output.push({ json: q[0].data.json });
+            output.push({ ...q[0].data });
           }
         }
       }
@@ -173,7 +173,7 @@ export class Queue implements INodeType {
 
         if (state.queue.length > 0) {
           state.locked = true;
-          output.push({ json: state.queue[0].data.json });
+          output.push({ ...state.queue[0].data });
         } else {
           delete staticData.queues![signalKey];
         }
